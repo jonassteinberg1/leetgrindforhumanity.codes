@@ -302,11 +302,14 @@ section {
 /* --------- 2.1 Header --------- */
 
 #header {
-    height: 71px !important;
-    overflow: visible;
-    z-index: 9999;
+    position: fixed;     /* Makes it stick to the top */
+    top: 0;
+    left: 0;
     width: 100%;
-    position: absolute !important;
+    z-index: 1000;
+    background: #fff;    /* Or transparent if your design calls for it */
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Optional subtle shadow */
 }
 
 #header .row {
@@ -797,6 +800,17 @@ h6 {
     width: 30px;
     height: 5px;
     margin-top: 30px;
+}
+
+#banner {
+    background-image: url('../images/your-banner.jpg'); /* Make sure this is the actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 

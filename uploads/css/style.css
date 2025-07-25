@@ -22,7 +22,7 @@
 - 6.3 Gallery
 - 6.4 Video
 - 6.5 Clients
-- 6.6 Pricing Table
+- 6.6 Sign Up
 7. Footer
 
 
@@ -829,8 +829,29 @@ h6 {
 
 /*Icon Block*/
 
+.icon-block-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
 .icon-block {
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    min-height: 200px; /* Adjust as needed */
+    box-sizing: border-box;
+}
+
+.icon-block-description {
+    flex: 1;
+}
+
+.col-2.icon-block {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .icon-block h4 {
@@ -1436,71 +1457,154 @@ blockquote {
     display: inline-block;
 }
 
-/* --------- 6.7 Pricing Table ---------- */
+/* --------- 6.7 Sign Up ---------- */
 
-.pricing-block-content {
-    background: #fff;
-    padding: 25px 0 25px 0;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
-    transition: all 0.2s ease-in-out 0s;
-    position: relative;
-    border: 10px solid #fff;
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin: 30px auto;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
-
-.pricing-block ul {
-    list-style: none;
-    margin: 25px 0 25px 0;
+.day-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  min-width: 100px; /* ensures columns don't collapse on smaller screens */
 }
 
-.pricing-block li {
-    padding: 14px 0;
-    border-bottom: 1px dotted #e1e1e1;
+.day-column h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.pricing-block li:last-of-type {
-    border:none;
+.hour-block {
+  width: 60px;
+  height: 30px;
+  margin: 3px 0;
+  background: #f0f0f0;
+  border-radius: 4px;
+  line-height: 30px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.2s ease;
 }
 
-.pricing-block h3 {
-    font-size:17px;
-    text-transform:uppercase;
-    padding-bottom:0;
+.hour-block:hover {
+  background: #e0e0e0;
 }
 
-.pricing-sub {
-    font-style: italic;
-    color:#ccc;
-    margin:0 0 25px 0;
+.hour-block.selected {
+  background: #f7c948;
+  color: #000;
+  border-color: #d4aa00;
 }
 
-/*Price*/
-
-.pricing {
-    background: #f5f5f5;
-    padding: 25px;
-    position: relative;
+.button {
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-weight: bold;
+  border: 2px solid #000;
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.price {
-    display: inline-block;
-    font-size: 62px;
-    font-weight: 700;
-    position: relative;
+.button:hover {
+  background: #000;
+  color: #fff;
 }
 
-.price span {
-    position: absolute;
-    top: 0;
-    left: -20px;
-    font-size: 22px;
+.hour-row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 3px;
 }
 
-.pricing  p {
-    font-style:italic;
-    color:#b4b4b4;
-    line-height:auto;
-    margin:0;
+.quarter-block {
+  width: 42px;
+  height: 28px;
+  font-size: 10px;
+  text-align: center;
+  line-height: 28px;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.quarter-block.selected {
+  background: #f7c948;
+  border-color: #d4aa00;
+  color: black;
+}
+
+.schedule-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.schedule-row h4 {
+  width: 50px;
+  margin-right: 12px;
+}
+
+.schedule-track {
+  position: relative;
+  background: #f0f0f0;
+  height: 30px;
+  flex-grow: 1;
+  border-radius: 4px;
+  cursor: crosshair;
+}
+
+.selection-block {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: #f7c948;
+  border-radius: 4px;
+}
+
+.clear-day {
+  margin-left: 12px;
+  padding: 4px 8px;
+  font-size: 12px;
+  border: 1px solid #aaa;
+  background: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clear-day:hover {
+  background: #ddd;
+}
+
+.time-label {
+  font-size: 10px;
+  color: #000;
+  padding: 2px 4px;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 
